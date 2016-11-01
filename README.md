@@ -1,5 +1,5 @@
 # distance-service
-##This service returns road distance between two latitudes-longitudes.
+##This web service (api) returns road distance between two latitudes-longitudes.
 
 Have used data released by OSM [https://www.openstreetmap.org/]. 
 Data can be downloaded from https://mapzen.com/data/metro-extracts/.
