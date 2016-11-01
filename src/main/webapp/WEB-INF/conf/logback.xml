@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="rollingFileAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/distance-service/service.%d{yyyy-MM-dd_HH}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+             <maxHistory>100</maxHistory>
+      		<totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>%date{YYYY-MM-dd HH:mm:ss} %level [%thread] %logger{10} [%file:%line] %msg %n</Pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="req-res-appender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/distance-service/req-res.%d{yyyy-MM-dd_HH}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>100</maxHistory>
+      		<totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>%date{YYYY-MM-dd HH:mm:ss} %level [%thread] %logger{10} [%file:%line] %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="req-res-logger" level="info" additivity="false">
+        <appender-ref ref="req-res-appender" />
+    </logger>
+
+    <logger name="com.swiggy.distance" level="info" />
+
+    <logger name="org.springframework.core" level="info" />
+
+    <logger name="org.springframework.beans" level="info" />
+
+    <logger name="org.springframework.context" level="info" />
+
+    <logger name="org.springframework.http" level="info" />
+
+    <logger name="org.springframework.web" level="info" />
+
+    <root level="info">
+        <appender-ref ref="rollingFileAppender" />
+    </root>
+</configuration>

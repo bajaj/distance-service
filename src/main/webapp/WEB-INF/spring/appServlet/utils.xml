@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- JACKSON BEANS -->
+    <bean id="jacksonMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <constructor-arg name="objectMapper" ref="objectMapper" />
+        <!--<property name="supportedMediaTypes" ref="formHttpMessageConverter"></property>-->
+        <!-- Using the default supported media types. -->
+    </bean>
+
+    <bean
+            class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jacksonMessageConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="objectMapper" class="com.swiggy.jackson.databind.SwiggyObjectMapper" />
+
+</beans>

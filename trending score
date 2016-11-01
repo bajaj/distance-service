@@ -1,0 +1,149 @@
+swiggy=> select CI.item_id, CI.name, COUNT(*)
+swiggy-> from oms_order O
+swiggy-> inner join oms_cartitem CI ON O.cart_id = CI.cart_id
+swiggy-> and O.ordered_time >= '2016-05-15'
+swiggy-> group by CI.item_id, CI.name
+swiggy-> order by count(*) desc limit 20;
+ item_id |               name               | count 
+---------+----------------------------------+-------
+  782783 | Chicken Biryani                  |  3079
+  801013 | Paneer Butter Masala             |  2963
+  801014 | Paneer Palak Masala              |  2955
+  893108 | Chicken Biryani                  |  2476
+ 2249156 | Haleem                           |  2008
+  643938 | Boneless Chicken Biryani         |  1876
+  707778 | Chicken Biryani (Full)           |  1769
+  707776 | Chicken Biryani (Single)         |  1497
+  782789 | Rumali Roti                      |  1488
+ 1032305 | Plain Roti                       |  1416
+  893114 | Mutton Biryani                   |  1404
+  782786 | Mutton Biryani                   |  1350
+  782689 | Grilled Chicken                  |  1319
+  602519 | Boneless Special Chicken Biryani |  1298
+  893104 | Chicken Family Pack              |  1280
+   27989 | Tawa Roti (Phulka)               |  1279
+  854801 | Udin Vada                        |  1273
+ 1313464 | Chicken Biryani                  |  1229
+  643939 | Meghana Special Biryani          |  1153
+  782707 | Chicken 65                       |  1151
+(20 rows)
+
+swiggy=> \d oms_order
+swiggy=> select CI.item_id, CI.name, COUNT(*)
+swiggy-> from oms_order O
+swiggy-> inner join oms_cartitem CI ON O.cart_id = CI.cart_id
+swiggy-> and O.ordered_time >= '2016-05-15' and O.area_id = 1
+swiggy-> group by CI.item_id, CI.name
+swiggy-> order by count(*) desc limit 20;
+ item_id |                 name                 | count 
+---------+--------------------------------------+-------
+  643938 | Boneless Chicken Biryani             |  1856
+  643939 | Meghana Special Biryani              |  1139
+ 1257863 | Roti (Phulka)                        |   945
+  281649 | Phulka                               |   906
+   29758 | Chicken Biryani                      |   853
+  613998 | Death By Chocolate                   |   769
+ 1263755 | Hyderabadi Chicken Biryani           |   697
+ 1557388 | Thalassery Chicken Dum Biryani       |   684
+  990530 | Chicken Whopper Burger               |   608
+ 1118187 | Pepsi Pet Bottle (600 ml)            |   532
+ 1257864 | Roti(Butter Phulka)                  |   483
+  990534 | Crispy Chicken Burger                |   469
+  855648 | Masala Dosa                          |   457
+ 1291986 | Idlis (2 Pcs)                        |   444
+  771071 | Fruit Bowl                           |   429
+ 1044669 | Tawa Phulka with Ghee                |   426
+  855636 | Udin Vada                            |   424
+  545263 | All American Cheese Burger (Regular) |   403
+  562365 | Double Chicken Roll                  |   386
+  153527 | Mutton Tunday Kebab (Galouti)        |   385
+(20 rows)
+
+swiggy=> select CI.item_id, CI.name, COUNT(*)
+swiggy-> from oms_order O
+swiggy-> inner join oms_cartitem CI ON O.cart_id = CI.cart_id
+swiggy-> and O.ordered_time >= '2016-06-08' and O.area_id = 1
+swiggy-> group by CI.item_id, CI.name
+swiggy-> order by count(*) desc limit 20;
+ item_id |                 name                 | count 
+---------+--------------------------------------+-------
+  643938 | Boneless Chicken Biryani             |   357
+  643939 | Meghana Special Biryani              |   202
+  613998 | Death By Chocolate                   |   161
+   29758 | Chicken Biryani                      |   157
+  281649 | Phulka                               |   145
+ 1257863 | Roti (Phulka)                        |   139
+ 1263755 | Hyderabadi Chicken Biryani           |   135
+   29760 | Kshatriya Kebab                      |   134
+ 1557388 | Thalassery Chicken Dum Biryani       |   112
+ 1291990 | Vada                                 |   101
+ 1291986 | Idlis (2 Pcs)                        |    94
+  855632 | Idlis (2 Pcs)                        |    92
+ 1543755 | Smoky Joe Chicken Sandwich           |    84
+  855636 | Udin Vada                            |    83
+ 1543754 | Your Eggcelency Sandwich             |    81
+  990530 | Chicken Whopper Burger               |    79
+  990534 | Crispy Chicken Burger                |    78
+ 1118187 | Pepsi Pet Bottle (600 ml)            |    77
+  545263 | All American Cheese Burger (Regular) |    73
+  614000 | Brownie Fudge Sundae                 |    72
+(20 rows)
+
+swiggy=> select CI.item_id, CI.name, COUNT(*)
+swiggy-> from oms_order O
+swiggy-> inner join oms_cartitem CI ON O.cart_id = CI.cart_id
+swiggy-> and O.ordered_time >= '2016-06-01' and O.area_id = 1
+swiggy-> group by CI.item_id, CI.name
+swiggy-> order by count(*) desc limit 20;
+ item_id |                 name                 | count 
+---------+--------------------------------------+-------
+  643938 | Boneless Chicken Biryani             |   778
+  643939 | Meghana Special Biryani              |   440
+   29758 | Chicken Biryani                      |   388
+  281649 | Phulka                               |   349
+  613998 | Death By Chocolate                   |   347
+ 1257863 | Roti (Phulka)                        |   321
+   29760 | Kshatriya Kebab                      |   319
+  990530 | Chicken Whopper Burger               |   302
+ 1263755 | Hyderabadi Chicken Biryani           |   281
+ 1557388 | Thalassery Chicken Dum Biryani       |   273
+ 1118187 | Pepsi Pet Bottle (600 ml)            |   241
+  855632 | Idlis (2 Pcs)                        |   234
+  990534 | Crispy Chicken Burger                |   215
+  855648 | Masala Dosa                          |   194
+  855636 | Udin Vada                            |   190
+ 1257864 | Roti(Butter Phulka)                  |   177
+ 1543755 | Smoky Joe Chicken Sandwich           |   174
+  990524 | Veg Whopper Burger                   |   173
+  153527 | Mutton Tunday Kebab (Galouti)        |   166
+  545263 | All American Cheese Burger (Regular) |   164
+(20 rows)
+
+swiggy=> select CI.item_id, CI.name, COUNT(*)
+swiggy-> from oms_order O
+swiggy-> inner join oms_cartitem CI ON O.cart_id = CI.cart_id
+swiggy-> and O.ordered_time >= '2016-05-01' and O.ordered_time <= '2016-05-30' and O.area_id = 1
+swiggy-> group by CI.item_id, CI.name
+swiggy-> order by count(*) desc limit 20;
+ item_id |              name              | count 
+---------+--------------------------------+-------
+  643938 | Boneless Chicken Biryani       |  1837
+  643939 | Meghana Special Biryani        |  1130
+ 1257863 | Roti (Phulka)                  |  1109
+   29758 | Chicken Biryani                |   849
+  281649 | Phulka                         |   826
+  613998 | Death By Chocolate             |   734
+ 1263755 | Hyderabadi Chicken Biryani     |   699
+   29760 | Kshatriya Kabab                |   684
+ 1557388 | Thalassery Chicken Dum Biryani |   645
+  855632 | Idli (2 Pcs)                   |   625
+  990530 | Chicken Whopper Burger         |   568
+ 1291986 | Idlis (2 Pcs)                  |   532
+ 1257864 | Roti(Butter Phulka)            |   518
+ 1118187 | Pepsi Pet Bottle (600 ml)      |   474
+  771071 | Fruit Bowl                     |   448
+  771049 | Veg Cheese Grill Sandwich      |   443
+  855636 | Udin Vada                      |   441
+  855648 | Masala Dosa                    |   437
+  990534 | Crispy Chicken Burger          |   425
+ 1543755 | Smoky Joe Chicken              |   416
