@@ -13,7 +13,7 @@ The configuration can be found at:
 distance-service/src/main/webapp/WEB-INF/properties/distance-service.properties
 
 It is currently configured for 8 Indian cities.
-Below script can be used to download the data.
+Below script can be used to download the data.  
 distance-service/blob/master/osmData.sh
 
     
