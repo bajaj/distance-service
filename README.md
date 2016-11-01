@@ -7,7 +7,7 @@ Data can be downloaded from https://mapzen.com/data/metro-extracts/.
 The routing engine used is GraphHopper Routing Engine.[https://github.com/graphhopper/graphhopper]
 
 The code is written in Java using spring framework.  
-The build system used in gradle.  
+The build system used is gradle.  
 This is used in production.
 
 The configuration can be found at:  
