@@ -16,6 +16,7 @@ It is currently configured for 8 Indian cities.
 Below script can be used to download the data.  
 distance-service/blob/master/osmData.sh
 
+### Request & Response format
 Request format json: An array of sources and destinations. 
 
 ```
